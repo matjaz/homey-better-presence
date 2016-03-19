@@ -5,6 +5,24 @@
   },
   "version": "1.0.0",
   "compatibility": "0.x",
+  "description": "Track presence using arpscan, ping, iBeacon etc.",
+  "category": [
+    "security",
+    "internet"
+  ],
+  "images": {
+    "large": "assets/images/large.png",
+    "small": "assets/images/small.png"
+  },
+  "contributors": {
+    "developers": [
+      {
+        "name": "Matjaž Lipuš",
+        "website": "http://matjaz.info",
+        "email": "matjazl@gmail.com"
+      }
+    ]
+  },
   "author": {
     "name": "Matjaž Lipuš",
     "website": "http://matjaz.info",
