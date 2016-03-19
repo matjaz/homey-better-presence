@@ -5,7 +5,9 @@
   },
   "version": "1.0.0",
   "compatibility": "0.x",
-  "description": "Track presence using arpscan, ping, iBeacon etc.",
+  "description": {
+    "en": "Track presence using arpscan, ping, iBeacon etc."
+  },
   "category": [
     "security",
     "internet"
