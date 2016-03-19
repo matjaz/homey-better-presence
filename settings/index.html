@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+  <head>
+      <title>Presence</title>
+  </head>
+  <body>
+    <h1>Better Presence</h1>
+    <fieldset>
+      <div class="field row">
+        <label for="serviceUrl"><a href="https://github.com/matjaz/presence-tracker/" target="_blank">Presence app</a> URL</label>
+        <input id="serviceUrl" type="text" placeholder="http://10.10.10.10:3000">
+      </div>
+    </fieldset>
+    <button class="right" onclick="save()">Save changes</button>
+    <script>
+    function onHomeyReady() {
+      Homey.get('serviceUrl', function(err, serviceUrl) {
+        if (err) {
+          console.error(err)
+        } else {
+          document.getElementById('serviceUrl').value = serviceUrl
+        }
+        Homey.ready()
+      })
+    }
+    function save() {
+      Homey.set('serviceUrl', document.getElementById('serviceUrl').value)
+    }
+    </script>
+  </body>
+</html>

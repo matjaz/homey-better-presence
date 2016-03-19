@@ -1,0 +1,9 @@
+{
+  "name": "info.matjaz.presence",
+  "version": "1.0.0",
+  "author": "Matjaž Lipuš <matjazl@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "http.min": "^1.2.4"
+  }
+}
