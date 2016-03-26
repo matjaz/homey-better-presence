@@ -1,1 +1,9 @@
-{}
+{
+  "settings": {
+    "saveSettings":"Save changes",
+    "presentDevices": "Present devices",
+    "missingAppUrl": "Missing presence app URL",
+    "incompatibleVersion":"Uncompatible tracker app version. Please update tracker app.",
+    "Unknown error": "Unknown error"
+  }
+}

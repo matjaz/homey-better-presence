@@ -1,31 +1,91 @@
 <!doctype html>
 <html>
   <head>
-      <title>Presence</title>
+      <title>Better Presence</title>
   </head>
   <body>
-    <h1>Better Presence</h1>
-    <fieldset>
-      <div class="field row">
-        <label for="serviceUrl"><a href="https://github.com/matjaz/presence-tracker/" target="_blank">Presence app</a> URL</label>
-        <input id="serviceUrl" type="text" placeholder="http://10.10.10.10:3000">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <style type="text/css">
+    p.bg-danger {
+      padding: 15px;
+    }
+    .tab-content {
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-top: 0;
+      border-radius: 0 0 10px 10px;
+      overflow: hidden;
+    }
+    .table {
+      margin-top: 10px;
+    }
+    </style>
+  </head>
+  <body ng-controller="betterPresenceCtrl">
+    <p class="text-danger" ng-if="error">{{::error}}</p>
+    <ul class="nav nav-tabs">
+      <li ng-class="{active:selTab=='status'}" ng-click="selectTab('status')"><a href="#">Status</a></li>
+      <li ng-class="{active:selTab=='providers'}" ng-click="selectTab('providers')"><a href="#">Providers</a></li>
+      <li ng-class="{active:selTab=='settings'}" ng-click="selectTab('settings')"><a href="#">Settings</a></li>
+    </ul>
+
+    <div class="tab-content" ng-show="selTab=='status'">
+      <table class="table table-bordered">
+        <tr ng-repeat="(prop, val) in status track by prop">
+          <td>{{::prop}}</td>
+          <td>{{::val}}</td>
+        </tr>
+      </table>
+      <h4 data-i18n="settings.presentDevices"></h4>
+      <button ng-click="loadPresence()" class="btn btn-xs">
+        <span class="glyphicon glyphicon-refresh"></span> Refresh presence
+      </button>
+      <table class="table table-bordered" ng-if="::presence">
+        <thead>
+          <th>ID (name)</th>
+          <th>Provider</th>
+          <th>Last seen</th>
+        </thead>
+        <tr ng-repeat="(id, p) in presence track by id">
+          <td>{{p.data.name || p.id}}</td>
+          <td>{{::p.type}}</td>
+          <td>{{p.last | date : 'short'}}</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="tab-content" ng-show="selTab=='providers'">
+      <div class="btn-group">
+        <button type="button" class="btn btn-default" ng-class="{active:selProvider==provider.id}" ng-repeat="provider in providers track by provider.id" ng-click="selectProvider(provider)">{{::provider.id}}</button>
       </div>
-    </fieldset>
-    <button class="right" onclick="save()">Save changes</button>
-    <script>
-    function onHomeyReady() {
-      Homey.get('serviceUrl', function(err, serviceUrl) {
-        if (err) {
-          console.error(err)
-        } else {
-          document.getElementById('serviceUrl').value = serviceUrl
-        }
-        Homey.ready()
-      })
-    }
-    function save() {
-      Homey.set('serviceUrl', document.getElementById('serviceUrl').value)
-    }
-    </script>
+      <div ng-repeat="provider in providers track by provider.id" ng-show="selProvider==provider.id">
+        <table class="table table-bordered">
+          <thead>
+            <th>ID</th>
+            <th>Present</th>
+            <th>Last seen</th>
+          </thead>
+          <tr ng-repeat="device in provider.devices track by device.id">
+            <td>{{::device.id}}</td>
+            <td>{{device.present}}</td>
+            <td>{{device.time | date : 'short'}}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="tab-content" ng-show="selTab=='settings'">
+      <form class="form-horizontal">
+        <div class="form-group">
+          <label for="serviceUrl" class="col-sm-2 control-label"><a href="https://github.com/matjaz/presence-tracker/" target="_blank">Presence app</a> URL</label>
+          <div class="col-sm-10">
+            <input id="serviceUrl" class="form-control" type="text" ng-model="settings.serviceUrl" placeholder="http://10.10.10.10:3000">
+          </div>
+        </div>
+      </form>
+      <button class="pull-right" ng-click="saveSettings()" data-i18n="settings.saveSettings"></button>
+    </div>
+    <script src="/manager/webserver/assets/js/angular.js"></script>
+    <script src="app.js"></script>
   </body>
 </html>
