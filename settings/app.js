@@ -1,5 +1,5 @@
 angular.module('betterPresence', [])
-.controller("betterPresenceCtrl", function($http, $q, $scope) {
+.controller('betterPresenceCtrl', function($http, $q, $scope) {
 
   $scope.settings = {}
 
@@ -10,7 +10,7 @@ angular.module('betterPresence', [])
     presence('GET', '/.meta').then(function (data) {
       $scope.status = data
       $scope.selectTab('status')
-      if (data.version && data.version.slice(0, 4) !== '1.2.') {
+      if (data.version && data.version.slice(0, 4) !== '1.5.') {
         Homey.alert(__('settings.incompatibleVersion'), 'error')
       }
     }).catch(function (error) {

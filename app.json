@@ -3,10 +3,10 @@
   "name": {
     "en": "Better Presence"
   },
-  "version": "1.1.0",
+  "version": "1.5.0",
   "compatibility": "0.x",
   "description": {
-    "en": "Track presence using arpscan, ping, iBeacon etc."
+    "en": "Track presence using arpscan, ping, TCP connect, iBeacon etc."
   },
   "category": [
     "security",
