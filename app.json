@@ -3,14 +3,13 @@
   "name": {
     "en": "Better Presence"
   },
-  "version": "1.5.0",
+  "version": "1.5.1",
   "compatibility": "0.x",
   "description": {
     "en": "Track presence using arpscan, ping, TCP connect, iBeacon etc."
   },
   "category": [
-    "security",
-    "internet"
+    "tools"
   ],
   "images": {
     "large": "assets/images/large.png",
