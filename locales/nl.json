@@ -1,0 +1,9 @@
+{
+  "settings": {
+    "saveSettings":"Wijzigingen opslaan",
+    "presentDevices": "Aanwezig aparaten",
+    "missingAppUrl": "Missende presence app URL",
+    "incompatibleVersion":"Niet geschikte tracker app versie. Update a.u.b. de tracker app.",
+    "Unknown error": "Onbekende fout"
+  }
+}
