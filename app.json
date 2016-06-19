@@ -30,7 +30,9 @@
         "name": "Marco van 't Klooster",
         "email": "info@marcovantklooster.nl",
         "website": "http://www.marcovantklooster.nl",
-        "lang": "nl"
+        "languages": [
+          "nl"
+        ]
       }
     ]
   },
