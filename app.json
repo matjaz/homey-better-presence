@@ -1,12 +1,14 @@
 {
   "id": "info.matjaz.presence",
   "name": {
-    "en": "Better Presence"
+    "en": "Better Presence",
+    "nl": "Betere Aanwezigheid"
   },
-  "version": "1.6.0",
+  "version": "1.6.1",
   "compatibility": "0.x",
   "description": {
-    "en": "Track presence using arpscan, ping, TCP connect, iBeacon etc."
+    "en": "Track presence using arpscan, ping, TCP connect, iBeacon etc.",
+    "nl": "Aanwezigheid monitoren d.m.v arpscan, ping, TCP connect, iBeacon etc."
   },
   "category": [
     "tools"
@@ -22,6 +24,14 @@
         "website": "http://matjaz.info",
         "email": "matjazl@gmail.com"
       }
+    ],
+    "translators": [
+      {
+        "name": "Marco van 't Klooster",
+        "email": "info@marcovantklooster.nl",
+        "website": "http://www.marcovantklooster.nl",
+        "lang": "nl"
+      }
     ]
   },
   "author": {
@@ -34,14 +44,16 @@
       {
         "id": "presenceChanged",
         "title": {
-          "en": "Presence changed"
+          "en": "Presence changed",
+          "nl": "Aanwezigheid veranderd"
         },
         "args": [
           {
             "name": "id",
             "type": "text",
             "placeholder": {
-              "en": "Device ID"
+              "en": "Device ID",
+              "nl": "Apparaat ID"
             }
           }
         ],
@@ -49,7 +61,8 @@
           {
             "name": "isPresent",
             "title": {
-              "en": "Present"
+              "en": "Present",
+              "nl": "Aanwezig"
             }
           }
         ]
@@ -57,19 +70,22 @@
       {
         "id": "presenceChangedAny",
         "title": {
-          "en": "Presence changed"
+          "en": "Presence changed",
+          "nl": "Aanwezigheid veranderd"
         },
         "tokens": [
           {
             "name": "isPresent",
             "title": {
-              "en": "Present"
+              "en": "Present",
+              "nl": "Aanwezig"
             }
           },
           {
             "name": "id",
             "title": {
-              "en": "ID"
+              "en": "ID",
+              "nl": "ID"
             }
           }
         ]
