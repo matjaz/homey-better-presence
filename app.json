@@ -1,79 +1,79 @@
 {
-  "id": "info.matjaz.presence",
-  "name": {
-    "en": "Better Presence"
-  },
-  "version": "1.5.1",
-  "compatibility": "0.x",
-  "description": {
-    "en": "Track presence using arpscan, ping, TCP connect, iBeacon etc."
-  },
-  "category": [
-    "tools"
-  ],
-  "images": {
-    "large": "assets/images/large.png",
-    "small": "assets/images/small.png"
-  },
-  "contributors": {
-    "developers": [
-      {
-        "name": "Matjaž Lipuš",
-        "website": "http://matjaz.info",
-        "email": "matjazl@gmail.com"
-      }
-    ]
-  },
-  "author": {
-    "name": "Matjaž Lipuš",
-    "website": "http://matjaz.info",
-    "email": "matjazl@gmail.com"
-  },
-  "flow": {
-    "triggers": [
-      {
-        "id": "presenceChanged",
-        "title": {
-          "en": "Presence changed"
-        },
-        "args": [
-          {
-            "name": "id",
-            "type": "text",
-            "placeholder": {
-              "en": "Device ID"
-            }
-          }
-        ],
-        "tokens": [
-          {
-            "name": "isPresent",
-            "title": {
-              "en": "Present"
-            }
-          }
-        ]
-      },
-      {
-        "id": "presenceChangedAny",
-        "title": {
-          "en": "Presence changed"
-        },
-        "tokens": [
-          {
-            "name": "isPresent",
-            "title": {
-              "en": "Present"
-            }
-          },
-          {
-            "name": "id",
-            "title": {
-              "en": "ID"
-            }
-          }
-        ]
-      }
-    ]
-  }
+	"id": "info.matjaz.presence",
+	"name": {
+		"en": "Better Presence",
+		"nl": "Betere Aanwezigheid"
+	},
+	"version": "1.6.0",
+	"compatibility": "0.x",
+	"description": {
+		"en": "Track presence using arpscan, ping, TCP connect, iBeacon etc.",
+		"nl": "Aanwezigheid monitoren d.m.v arpscan, ping, TCP connect, iBeacon etc."
+	},
+	"category": ["tools"],
+	"images": {
+		"large": "assets/images/large.png",
+		"small": "assets/images/small.png"
+	},
+	"contributors": {
+		"developers": [{
+			"name": "Matjaž Lipuš",
+			"website": "http://matjaz.info",
+			"email": "matjazl@gmail.com"
+		}],
+		"translators": [{
+			"name": "Marco van 't Klooster",
+			"email": "info@marcovantklooster.nl",
+			"website": "http://www.marcovantklooster.nl",
+			"lang": "nl"
+		}]
+	},
+	"author": {
+		"name": "Matjaž Lipuš",
+		"website": "http://matjaz.info",
+		"email": "matjazl@gmail.com"
+	},
+	"flow": {
+		"triggers": [{
+			"id": "presenceChanged",
+			"title": {
+				"en": "Presence changed",
+				"nl": "Aanwezigheid veranderd"
+			},
+			"args": [{
+				"name": "id",
+				"type": "text",
+				"placeholder": {
+					"en": "Device ID",
+					"nl": "Apparaat ID"
+				}
+			}],
+			"tokens": [{
+				"name": "isPresent",
+				"title": {
+					"en": "Present",
+					"nl": "Aanwezig"
+				}
+			}]
+		}, {
+			"id": "presenceChangedAny",
+			"title": {
+				"en": "Presence changed",
+				"nl": "Aanwezigheid veranderd"
+			},
+			"tokens": [{
+				"name": "isPresent",
+				"title": {
+					"en": "Present",
+					"nl": "Aanwezig"
+				}
+			}, {
+				"name": "id",
+				"title": {
+					"en": "ID",
+					"nl": "ID"
+				}
+			}]
+		}]
+	}
 }
