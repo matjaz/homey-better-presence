@@ -4,7 +4,7 @@
     "en": "Better Presence",
     "nl": "Betere Aanwezigheid"
   },
-  "version": "1.6.1",
+  "version": "1.6.2",
   "compatibility": "0.x",
   "description": {
     "en": "Track presence using arpscan, ping, TCP connect, iBeacon etc.",
