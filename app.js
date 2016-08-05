@@ -1,6 +1,5 @@
 'use strict'
 
-var os = require('os')
 var http = require('http.min')
 var state = {}
 
@@ -8,10 +7,17 @@ var hookInterval = 30000
 var retryTime = 5000
 
 exports.init = function () {
-  var baseHomeyUrl = 'http://' + getLocalIP()
+  Homey.manager('cloud').getLocalAddress(function (err, localAddress) {
+    if (err) {
+      Homey.error(err)
+    }
+    if (localAddress) {
+      var baseHomeyUrl = 'http://' + localAddress
+      registerWebHook('present', baseHomeyUrl + '/api/app/info.matjaz.presence/hooks/present')
+      registerWebHook('absent', baseHomeyUrl + '/api/app/info.matjaz.presence/hooks/absent')
+    }
+  })
   loadState()
-  registerWebHook('present', baseHomeyUrl + '/api/app/info.matjaz.presence/hooks/present')
-  registerWebHook('absent', baseHomeyUrl + '/api/app/info.matjaz.presence/hooks/absent')
 
   Homey.manager('flow').on('trigger.presenceChanged', onFlowTriggerPresenceChanged)
   Homey.log('Presence ready')
@@ -88,11 +94,4 @@ function registerWebHook (event, options) {
 
 function onFlowTriggerPresenceChanged (callback, args, state) {
   callback(null, args.id === state.id)
-}
-
-function getLocalIP () {
-  var i = os.networkInterfaces()['wlan0'].filter(function (i) {
-    return i.family === 'IPv4'
-  })[0]
-  return i && i.address
 }
