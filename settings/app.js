@@ -1,9 +1,8 @@
 angular.module('betterPresence', [])
-.controller('betterPresenceCtrl', function($http, $q, $scope) {
-
+.controller('betterPresenceCtrl', function ($http, $q, $scope) {
   $scope.settings = {}
 
-  Homey.get('serviceUrl', function(err, serviceUrl) {
+  Homey.get('serviceUrl', function (err, serviceUrl) {
     if (!err) {
       $scope.settings.serviceUrl = serviceUrl
     }
@@ -74,6 +73,6 @@ angular.module('betterPresence', [])
   Homey.ready()
 })
 
-function onHomeyReady() {
-  angular.bootstrap(document, ['betterPresence']);
+window.onHomeyReady = function () {
+  angular.bootstrap(document, ['betterPresence'])
 }
