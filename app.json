@@ -4,8 +4,8 @@
     "en": "Better Presence",
     "nl": "Betere Aanwezigheid"
   },
-  "version": "1.6.2",
-  "compatibility": "0.x",
+  "version": "1.6.3",
+  "compatibility": "0.x || 1.x",
   "description": {
     "en": "Track presence using arpscan, ping, TCP connect, iBeacon etc.",
     "nl": "Aanwezigheid monitoren d.m.v arpscan, ping, TCP connect, iBeacon etc."
